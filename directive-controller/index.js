@@ -4,9 +4,9 @@ angular.module('myApp', [])
       restrict: 'A',
       template: 'Inside myDirective, isolate scope: {{ myProperty }}',
       scope: {},
-      controller: ['$scope', function(scope) {
-        console.log(scope.myProperty);
-        console.log(scope.__proto__);
+      controller: ['$scope', '$element', '$attrs', function($scope, $element, $attrs, $transclude) {
+        console.log($scope.myProperty);
+        console.log($scope.__proto__);
       }]
     };
   })
@@ -15,9 +15,9 @@ angular.module('myApp', [])
       restrict: 'A',
       template: 'Inside myDirective, isolate scope: {{ myProperty }}',
       scope: true,
-      controller: ['$scope', function(scope) {
-        console.log(scope.myProperty);
-        console.log(scope.__proto__);
+      controller: ['$scope', function($scope, $element, $attrs, $transclude) {
+        console.log($scope.myProperty);
+        console.log($scope.__proto__);
       }]
     };
   });

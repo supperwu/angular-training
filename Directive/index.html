@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+    <script type="text/javascript" src="../bower_components/angular/angular.js"></script>
+    <script type="text/javascript" src="./direct-scope.js"></script>
+  </head>
+  <body ng-app="myApp">
+    <div ng-init="myProperty='wow,thisiscool'">
+      Surrounding scope:
+      {{ myProperty }}
+      <div my-directive></div>
+      <div my-inherit-scope-directive></div>
+
+    </div>
+  </body>
+</html>
